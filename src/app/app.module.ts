@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentClientComponent } from './component-client/component-client.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { ComponentClientComponent } from './component-client/component-client.co
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: '', component: AppComponent },
+      { path: 'home', component: AppComponent },
       { path: 'client', component: ComponentClientComponent },
+      { path: '', redirectTo: '/home', pathMatch: 'full' }
     ])
   ],
   providers: [],
