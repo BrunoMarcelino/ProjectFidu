@@ -10,18 +10,38 @@ import { Client } from '../../shared/models/clientModel';
 })
 export class ComponentHomeComponent implements OnInit {
 
-  adunits: Client[];
+  public adunits: Client;
+  public montants ;
+  public test;
+
 
   constructor(private adunitservice: ClientService ) {}
 
   // Use of the Service for get Data
 
   ngOnInit() {
-    this.adunitservice.getClient().subscribe((data: Client[]) => {
+    this.adunitservice.getClient().subscribe((data: Client) => {
       this.adunits = data;
-      console.log('==========>', data);
+      console.log('==========>', data.operations);
+
+
+      // filter montant;
+      console.log('============== log Montant ===============');
+      this.montants = data.operations.map(x => x.Montant);
+      console.log(this.montants);
+
+      for (let i = 0; i < this.montants.length; i++){
+
+        let ResultArrayMontant = this.montants[i];
+        console.log("montant=====>", ResultArrayMontant);
+
+        if(ResultArrayMontant > 0) {
+          this.test = true ;
+        }else {
+          this.test = false;
+        }
+
+      }
     });
-
   }
-
 }

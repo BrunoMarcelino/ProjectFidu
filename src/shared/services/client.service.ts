@@ -6,7 +6,7 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 })
 export class ClientService {
 
-  uri = 'https://agrcf.lib.id/exercice@dev/';
+  public url = 'https://agrcf.lib.id/exercice@dev/';
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +25,6 @@ export class ClientService {
 */
 
   getClient() {
-    return this.http.get(`${this.uri}`);
+    return this.http.get(`${this.url}`);
     }
 }
