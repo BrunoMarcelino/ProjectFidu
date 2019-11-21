@@ -11,7 +11,10 @@ import { Client } from '../../shared/models/clientModel';
 export class ComponentHomeComponent implements OnInit {
 
   adunits: Client[];
+
   constructor(private adunitservice: ClientService ) {}
+
+  // Use of the Service for get Data
 
   ngOnInit() {
     this.adunitservice.getClient().subscribe((data: Client[]) => {
