@@ -12,21 +12,15 @@ export class ComponentHomeComponent implements OnInit {
 
   public adunits: Client;
   public montants ;
-  public test;
-
 
   constructor(private adunitservice: ClientService ) {}
 
   // Use of the Service for get Data
-
   ngOnInit() {
     this.adunitservice.getClient().subscribe((data: Client) => {
       this.adunits = data;
-    // console.log('==========>', data.operations);
-
 
       // filter montant;
-      console.log('============== log Montant ===============');
       this.adunits.operations = this.adunits.operations.map(current => {
         current.Montant = parseFloat(current.Montant.replace(",","."));
         return current;

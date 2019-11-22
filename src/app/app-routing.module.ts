@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ComponentClientComponent } from './component-client/component-client.component';
 import { ComponentHomeComponent } from './component-home/component-home.component';
 
+// Routing initialisation
 const routes: Routes = [
   { path: 'home', component: ComponentHomeComponent },
   { path: 'client', component: ComponentClientComponent },

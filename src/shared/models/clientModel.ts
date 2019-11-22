@@ -1,3 +1,4 @@
+// The Model of the RIB Client
 export class Client {
     statut: string;
     operations: {

@@ -6,24 +6,12 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 })
 export class ClientService {
 
+  // Call of the API
   public url = 'https://agrcf.lib.id/exercice@dev/';
 
   constructor(private http: HttpClient) { }
 
-
- /* create(name, contact, request, date, comment) {
-    const obj = {
-      name: name,
-      contact: contact,
-      request: request,
-      date: date,
-      comment: comment
-    };
-    this.http.post(`${this.uri}/store`, obj)
-        .subscribe(res => alert('Your request has been send to Admin, Our companie will call you after a few time kiss'));
-  }
-*/
-
+  // Function get API
   getClient() {
     return this.http.get(`${this.url}`);
     }

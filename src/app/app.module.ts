@@ -12,7 +12,9 @@ import { from } from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentHomeComponent } from './component-home/component-home.component';
 import { ClientService } from '../shared/services/client.service';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+// import material Design bootstrap
+import { MDBBootstrapModule, IconsModule } from 'angular-bootstrap-md';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MatSliderModule,
     HttpClientModule,
     RouterModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
   ],
   schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA ],
   providers: [ ClientService ],

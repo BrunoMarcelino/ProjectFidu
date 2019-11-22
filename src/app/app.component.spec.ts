@@ -4,7 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('AppComponent', () => {
+describe('AppComponent Test', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -18,13 +18,13 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  it('=== should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ProjectFiduciaire'`, () => {
+  it(`=== should have as title 'ProjectFiduciaire'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('ProjectFiduciaire');

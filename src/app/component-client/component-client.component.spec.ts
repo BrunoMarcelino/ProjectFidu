@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ComponentClientComponent } from './component-client.component';
 
-describe('ComponentClientComponent', () => {
+describe('ComponentClientComponent Test', () => {
   let component: ComponentClientComponent;
   let fixture: ComponentFixture<ComponentClientComponent>;
 
@@ -19,7 +19,7 @@ describe('ComponentClientComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('=== should create', () => {
     expect(component).toBeTruthy();
   });
 });
