@@ -22,26 +22,15 @@ export class ComponentHomeComponent implements OnInit {
   ngOnInit() {
     this.adunitservice.getClient().subscribe((data: Client) => {
       this.adunits = data;
-      console.log('==========>', data.operations);
+    // console.log('==========>', data.operations);
 
 
       // filter montant;
       console.log('============== log Montant ===============');
-      this.montants = data.operations.map(x => x.Montant);
-      console.log(this.montants);
-
-      for (let i = 0; i < this.montants.length; i++){
-
-        let ResultArrayMontant = this.montants[i];
-        console.log("montant=====>", ResultArrayMontant);
-
-        if(ResultArrayMontant > 0) {
-          this.test = true ;
-        }else {
-          this.test = false;
-        }
-
-      }
+      this.adunits.operations = this.adunits.operations.map(current => {
+        current.Montant = parseFloat(current.Montant.replace(",","."));
+        return current;
+      });
     });
   }
 }

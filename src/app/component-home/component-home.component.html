@@ -13,14 +13,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr mdbTableCol *ngFor="let adunit of adunits?.operations">
-      <th scope="row">{{ adunit.RIB}}</th>
-      <td>{{ adunit.Date}}</td>
-      <td>{{ adunit.Libelle}}</td>
-      <td>{{ adunit.Montant}}</td>
-      <td >{{ adunit.Devise}}</td>
-      <td *ngIf="test">{{ adunit.Montant }}</td>
-      <td *ngIf="!test">{{ adunit.Montant}}</td>
+    <tr mdbTableCol *ngFor="let adunit of adunits.operations">
+      <th scope="row">{{ adunit?.RIB}}</th>
+      <td>{{ adunit?.Date}}</td>
+      <td>{{ adunit?.Libelle}}</td>
+      <td>{{ adunit?.Montant | number}}</td>
+      <td >{{ adunit?.Devise}}</td>
+      <td >{{ adunit.Montant > 0 ? adunit.Montant : 0}}</td>
+      <td >{{ adunit.Montant < 0 ? adunit.Montant : 0}}</td>
     </tr>
   </tbody>
 </table>

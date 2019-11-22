@@ -1,12 +1,10 @@
 export class Client {
     statut: string;
-    operations: [
-      {
-         RIB: number,
-         Date: Date,
-         Libelle: string,
-         Montant: number,
-         Devise: string
-       }
-    ];
+    operations: {
+         RIB: any,
+         Date: any,
+         Libelle: any,
+         Montant: any,
+         Devise: any
+       }[];
 }
